@@ -16,13 +16,13 @@ limitations under the License.
 package main
 
 import (
-	"github.com/node-a-team/Cosmos-IE/cmd"
+	"github.com/Thor-BadgerBite/Cosmos-IE/cmd"
 )
 
 var (
 	//        chainList = []string{"cosmos", "terra", "iris", "kava", "iov", "emoney", "band", "certik", "rizon"}
 	// Chains with stargate upgrade applied
-	chainList = []string{"cosmos", "iris", "band", "terra", "starname", "certik", "terra", "rizon"}
+	chainList = []string{"cosmos", "iris", "band", "terra", "starname", "certik", "terra", "rizon", "odin", "bitsong"}
 )
 
 func main() {
