@@ -4,6 +4,7 @@ go 1.15
 
 require (
 	github.com/GeoDB-Limited/odin-core v0.3.0
+	github.com/bitsongofficial/go-bitsong v0.10.0
 	github.com/bandprotocol/chain v1.0.0
 	github.com/cosmos/cosmos-sdk v0.44.5
 	github.com/e-money/em-ledger v0.9.4
