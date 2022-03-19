@@ -6,8 +6,8 @@ import (
 	"go.uber.org/zap"
 	"strconv"
 
-	rest "github.com/node-a-team/Cosmos-IE/rest/common"
-	utils "github.com/node-a-team/Cosmos-IE/utils"
+	rest "github.com/Thor-BadgerBite/Cosmos-IE/rest/common"
+	utils "github.com/Thor-BadgerBite/Cosmos-IE/utils"
 
 	"github.com/prometheus/client_golang/prometheus"
 )
