@@ -21,6 +21,13 @@ type inflation_iris struct {
 	}
 }
 
+type inflation_odin struct {
+	Params struct {
+		Mint_Denom	string
+		Inflation	string
+	}
+}
+
 type inflation_Emoney struct {
         Height string   `json:"height"`
         Result struct {
@@ -53,7 +60,7 @@ func getInflation(chain string, denom string, log *zap.Logger) float64 {
                         log.Info("\t", zap.Bool("Success", true), zap.String("Inflation", result),)
                 }
 	case "odin":
-		var i inflation_iris
+		var i inflation_odin
 
 		res, _ := runRESTCommand("/mint/params")
                 json.Unmarshal(res, &i)
