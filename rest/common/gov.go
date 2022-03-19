@@ -6,7 +6,7 @@ import (
 	"go.uber.org/zap"
 	"encoding/json"
 
-	utils "github.com/node-a-team/Cosmos-IE/utils"
+	utils "github.com/Thor-BadgerBite/Cosmos-IE/utils"
 )
 
 type govInfo struct {
