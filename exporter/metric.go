@@ -3,8 +3,8 @@ package exporter
 import (
 	"go.uber.org/zap"
 
-	rest "github.com/node-a-team/Cosmos-IE/rest/common"
-	utils "github.com/node-a-team/Cosmos-IE/utils"
+	rest "github.com/Thor-BadgerBite/Cosmos-IE/rest/common"
+	utils "github.com/Thor-BadgerBite/Cosmos-IE/utils"
 )
 
 
@@ -72,6 +72,8 @@ func SetMetric(currentBlock int64, restData *rest.RESTData, log *zap.Logger) {
 	metricData.Validator.Oracle.Miss = restData.Oracle_terra
 	// Band
 	metricData.Validator.Oracle.Active = restData.Oracle_band
+	// Odin
+	metricData.Validator.Oracle.Active = restData.Oracle_odin
 
 }
 
