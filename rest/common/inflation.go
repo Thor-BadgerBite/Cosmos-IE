@@ -6,7 +6,7 @@ import (
 	"go.uber.org/zap"
 	"encoding/json"
 
-	utils "github.com/node-a-team/Cosmos-IE/utils"
+	utils "github.com/Thor-BadgerBite/Cosmos-IE/utils"
 )
 
 type inflation struct {
@@ -52,7 +52,20 @@ func getInflation(chain string, denom string, log *zap.Logger) float64 {
                         result = i.Params.Inflation
                         log.Info("\t", zap.Bool("Success", true), zap.String("Inflation", result),)
                 }
+	case "odin":
+		var i inflation_iris
 
+		res, _ := runRESTCommand("/mint/params")
+                json.Unmarshal(res, &i)
+
+                // log
+                if strings.Contains(string(res), "not found") {
+                        // handle error
+                        log.Fatal("", zap.Bool("Success", false), zap.String("err", string(res),))
+                } else {
+                        result = i.Params.Inflation
+                        log.Info("\t", zap.Bool("Success", true), zap.String("Inflation", result),)
+                }
 	case "terra":
 		break
 	case "emoney":
