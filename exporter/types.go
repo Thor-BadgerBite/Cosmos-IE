@@ -1,7 +1,7 @@
 package exporter
 
 import (
-	rest "github.com/node-a-team/Cosmos-IE/rest/common"
+	rest "github.com/Thor-BadgerBite/Cosmos-IE/rest/common"
 )
 
 var (
@@ -139,6 +139,10 @@ func getDenomList(chain string) []string {
 		dList = []string{"uctk"}
 	case "rizon":
 		dList = []string{"uatolo"}
+	case "odin":
+		dList = []string{"loki"}
+	case "bitsong":
+		dList = []string{"ubtsg"}
 	}
 
 	return dList
