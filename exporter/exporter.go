@@ -171,6 +171,22 @@ func addGauges(chain string, metricData *metric, log *zap.Logger) {
                                 additionalGauges[i].Set(gaugesValue[i])
                         }
                 }
+	if chain == "odin" {
+                if len(additionalGauges) == 0 {
+                        additionalGauges = make([]prometheus.Gauge, len(gaugesNamespaceList_Odin))
+
+                        for i := 0; i < len(gaugesNamespaceList_Odin); i++ {
+                                additionalGauges[i] = utils.NewGauge("exporter", gaugesNamespaceList_Odin[i], "")
+                                prometheus.MustRegister(additionalGauges[i])
+                        }
+                } else {
+                        gaugesValue := [...]float64{
+				metricData.Validator.Oracle.Active,
+                        }
+                        for i:=0; i < len(gaugesNamespaceList_Odin); i++ {
+                                additionalGauges[i].Set(gaugesValue[i])
+                        }
+                }
         } else if chain == "terra" {
 		if len(additionalGauges) == 0 {
 			additionalGauges = make([]prometheus.Gauge, len(gaugesNamespaceList_Terra))
