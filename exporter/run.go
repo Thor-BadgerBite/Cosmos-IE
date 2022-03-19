@@ -8,7 +8,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	iris "github.com/irisnet/irishub/address"
-	"github.com/node-a-team/Cosmos-IE/common"
+	"github.com/Thor-BadgerBite/Cosmos-IE/common"
 
 	terra "github.com/terra-project/core/types"
 	//	kava "github.com/kava-labs/kava/app"
@@ -49,6 +49,34 @@ func setConfig(chain string) {
 		iris.ConfigureBech32Prefix()
 	case "band":
 		bech32MainPrefix := "band"
+		var bip44CoinType uint32 = 494
+
+		accountPrefix := bech32MainPrefix
+		validatorPrefix := bech32MainPrefix + sdk.PrefixValidator + sdk.PrefixOperator
+		consensusPrefix := bech32MainPrefix + sdk.PrefixValidator + sdk.PrefixConsensus
+
+		config.SetBech32PrefixForAccount(accountPrefix, accountPrefix+sdk.PrefixPublic)
+		config.SetBech32PrefixForValidator(validatorPrefix, validatorPrefix+sdk.PrefixPublic)
+		config.SetBech32PrefixForConsensusNode(consensusPrefix, consensusPrefix+sdk.PrefixPublic)
+		config.SetCoinType(bip44CoinType)
+
+		//		fmt.Println(accountPrefix, validatorPrefix, consensusPrefix)
+	case "odin":
+		bech32MainPrefix := "odin"
+		var bip44CoinType uint32 = 494
+
+		accountPrefix := bech32MainPrefix
+		validatorPrefix := bech32MainPrefix + sdk.PrefixValidator + sdk.PrefixOperator
+		consensusPrefix := bech32MainPrefix + sdk.PrefixValidator + sdk.PrefixConsensus
+
+		config.SetBech32PrefixForAccount(accountPrefix, accountPrefix+sdk.PrefixPublic)
+		config.SetBech32PrefixForValidator(validatorPrefix, validatorPrefix+sdk.PrefixPublic)
+		config.SetBech32PrefixForConsensusNode(consensusPrefix, consensusPrefix+sdk.PrefixPublic)
+		config.SetCoinType(bip44CoinType)
+
+		//		fmt.Println(accountPrefix, validatorPrefix, consensusPrefix)
+	case "bitsong":
+		bech32MainPrefix := "bitsong"
 		var bip44CoinType uint32 = 494
 
 		accountPrefix := bech32MainPrefix
