@@ -171,7 +171,7 @@ func addGauges(chain string, metricData *metric, log *zap.Logger) {
                                 additionalGauges[i].Set(gaugesValue[i])
                         }
                 }
-	if chain == "odin" {
+	} else if chain == "odin" {
                 if len(additionalGauges) == 0 {
                         additionalGauges = make([]prometheus.Gauge, len(gaugesNamespaceList_Odin))
 
