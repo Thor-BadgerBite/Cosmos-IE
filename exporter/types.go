@@ -34,6 +34,7 @@ var (
 
 	gaugesNamespaceList_Terra = [...]string{"oracleMiss"}
 	gaugesNamespaceList_Band  = [...]string{"oracleActive"}
+	gaugesNamespaceList_Odin  = [...]string{"oracleActive"}
 
 	metricData metric
 )
