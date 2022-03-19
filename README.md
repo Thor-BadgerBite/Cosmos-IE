@@ -1,5 +1,5 @@
 # Cosmos-IE
-![CreatePlan](https://img.shields.io/badge/release-v3.0.8-red)
+![CreatePlan](https://img.shields.io/badge/release-v3.1.0-red)
 ![CreatePlan](https://img.shields.io/badge/go-1.15%2B-blue)
 ![CreatePlan](https://img.shields.io/badge/license-Apache--2.0-green)  
 Integrated Exporter for CosmosSDK
@@ -23,7 +23,7 @@ go build
 ```
 
 ## Service(ex: cosmos)
-- **--chain** _string_: Chain name of the monitoring node(cosmos | iris | band | terra | starname)
+- **--chain** _string_: Chain name of the monitoring node(cosmos | iris | band | terra | starname | odin | bitsong)
 ```bash
 ## Create a systemd service
 sudo tee /etc/systemd/system/Cosmos-IE.service > /dev/null <<EOF
