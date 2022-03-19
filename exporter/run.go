@@ -63,7 +63,7 @@ func setConfig(chain string) {
 		//		fmt.Println(accountPrefix, validatorPrefix, consensusPrefix)
 	case "odin":
 		bech32MainPrefix := "odin"
-		var bip44CoinType uint32 = 494
+		var bip44CoinType uint32 = 118
 
 		accountPrefix := bech32MainPrefix
 		validatorPrefix := bech32MainPrefix + sdk.PrefixValidator + sdk.PrefixOperator
