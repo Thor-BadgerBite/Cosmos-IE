@@ -6,9 +6,10 @@ import (
 	"os/exec"
 	// "log"
 
-	utils "github.com/node-a-team/Cosmos-IE/utils"
-	terra "github.com/node-a-team/Cosmos-IE/rest/chains/terra"
-	band "github.com/node-a-team/Cosmos-IE/rest/chains/band"
+	utils "github.com/Thor-BadgerBite/Cosmos-IE/utils"
+	terra "github.com/Thor-BadgerBite/Cosmos-IE/rest/chains/terra"
+	band "github.com/Thor-BadgerBite/Cosmos-IE/rest/chains/band"
+	odin "github.com/Thor-BadgerBite/Cosmos-IE/rest/chains/odin"
 )
 
 var (
@@ -34,6 +35,7 @@ type RESTData struct {
 
 	Oracle_terra	float64
 	Oracle_band	float64
+	Oracle_odin	float64
 	Gov		govInfo
 }
 
@@ -77,6 +79,7 @@ func GetData(chain string, blockHeight int64, blockData Blocks, denom string, lo
 //        rd.Commit = getCommit(blockData)
 
 	if chain == "band" { rd.Oracle_band = band.CheckOracleActive(Addr, OperAddr, log) }
+	if chain == "odin" { rd.Oracle_odin = odin.CheckOracleActive(Addr, OperAddr, log) }
 	if chain == "terra" { rd.Oracle_terra = terra.GetOracleMiss(Addr, OperAddr, log) }
 /*
 	if chain == "terra" {
