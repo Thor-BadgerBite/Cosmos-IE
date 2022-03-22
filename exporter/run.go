@@ -60,7 +60,7 @@ func setConfig(chain string) {
 		config.SetBech32PrefixForConsensusNode(consensusPrefix, consensusPrefix+sdk.PrefixPublic)
 		config.SetCoinType(bip44CoinType)
 
-		//		fmt.Println(accountPrefix, validatorPrefix, consensusPrefix)
+				fmt.Println(accountPrefix, validatorPrefix, consensusPrefix)
 	case "odin":
 		bech32MainPrefix := "odin"
 		var bip44CoinType uint32 = 118
